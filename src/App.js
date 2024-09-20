@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import React from 'react';
+import ResponsiveCard from './ResponsiveCard';
 import './App.css';
+import CustomTabs from './CustomTabs';
+import FilterBySkills from './FilterSection';
+import Header from './Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+        <CustomTabs/>
+        <FilterBySkills/>
+        <ResponsiveCard />
     </div>
   );
 }
