@@ -79,12 +79,11 @@ function App() {
           </Box>
         </Grid>
         <Grid item xs={8}>
-          <Box>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <CustomTabs />
           </Box>
         </Grid>
       </Grid>
-      <ResponsiveCard />
     </div>
   );
 }

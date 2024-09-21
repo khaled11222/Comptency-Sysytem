@@ -1,9 +1,35 @@
 import React from "react";
-import { Tabs, Tab, Box, Typography } from "@mui/material";
+import {
+  Tabs,
+  Tab,
+  Box,
+  Typography,
+  TextField,
+  IconButton,
+  Button,
+} from "@mui/material";
 import BookIcon from "@mui/icons-material/Book";
 import BriefcaseIcon from "@mui/icons-material/Work";
 import PeopleIcon from "@mui/icons-material/People";
 import { CardList } from "./components/CardList/CardList";
+import SearchIcon from "@mui/icons-material/Search";
+import { styled } from "@mui/system";
+
+const CustomTextField = styled(TextField)({
+  "& .MuiOutlinedInput-root": {
+    backgroundColor: "white",
+    borderRadius: "4px",
+    "&:hover fieldset": {
+      borderColor: "transparent",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "transparent",
+    },
+  },
+  "& .MuiOutlinedInput-notchedOutline": {
+    borderColor: "transparent",
+  },
+});
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -33,12 +59,11 @@ function CustomTabs() {
   };
 
   return (
-    <Box sx={{ width: "100%", padding: "16px" }}>
+    <Box sx={{ width: "100%" }}>
       <Tabs
         value={value}
         onChange={handleChange}
         aria-label="custom tabs example"
-        centered
         TabIndicatorProps={{ style: { display: "none" } }} // Hide the underline
         sx={{
           "& .MuiTab-root": {
@@ -106,6 +131,35 @@ function CustomTabs() {
             "&.Mui-selected": { backgroundColor: "#E0F2FE", color: "#00629C" },
           }}
         />
+        <Box
+          display="flex"
+          alignItems="center"
+          marginLeft={"auto"}
+          marginRight={3}
+        >
+          <CustomTextField
+            variant="outlined"
+            placeholder="Search Courses"
+            InputProps={{
+              sx: {
+                height: 38,
+                width: 206,
+              },
+              startAdornment: (
+                <IconButton>
+                  <SearchIcon />
+                </IconButton>
+              ),
+            }}
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            style={{ marginLeft: "8px" }}
+          >
+            Find
+          </Button>
+        </Box>
       </Tabs>
       <TabPanel index={1} value={value}>
         <CardList />

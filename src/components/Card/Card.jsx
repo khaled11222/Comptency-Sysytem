@@ -88,7 +88,7 @@ export const CourseCard = ({ isImageVisible }) => {
       <CardContent>
         <Box
           display="flex"
-          flexWrap={{ xs: "wrap" }}
+          flexWrap={{ xs: "wrap", md: "nowrap" }}
           justifyContent="space-between"
         >
           <Box
