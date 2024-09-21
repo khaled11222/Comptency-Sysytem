@@ -54,7 +54,7 @@ function CustomTabs() {
           icon={<BookIcon />}
           iconPosition="start"
           label="Academic Courses"
-          value="1"
+          value={1}
           sx={{
             color: "#4B5563",
             textTransform: "none",
